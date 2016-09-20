@@ -109,7 +109,9 @@ function displayWork() {
 		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 		$(".work-entry:last").append(formattedDescription);
 	}
-}	
+}
+
+displayWork();	
 
 $(document).click(function(loc) {
 	var x = loc.pageX;
@@ -119,33 +121,35 @@ $(document).click(function(loc) {
 } );
 
 
-projects.display = function(){
-	for (project in projects.projects) {
+function displayProjects() {
+	for (project_item in project.projects) {
 		$("#projects").append(HTMLprojectStart);
 
-		var formattedTitle = HTMLprojectTitle.replace("%data%",projects.projects[project].title);
+		var formattedTitle = HTMLprojectTitle.replace("%data%",project.projects[project_item].title);
 		$(".project-entry:last").append(formattedTitle);
 
-		var formattedDates = HTMLprojectDates.replace("%data%",projects.projects[project].dates);
+		var formattedDates = HTMLprojectDates.replace("%data%",project.projects[project_item].dates);
 		$(".project-entry:last").append(formattedDates);
 
-		var formattedDescription = HTMLprojectDescription.replace("%data%",projects.projects[project].Description);
+		var formattedDescription = HTMLprojectDescription.replace("%data%",project.projects[project_item].description);
 		$(".project-entry:last").append(formattedDescription);
 
-		if(projects.projects[project].images.length>0) {
-			for (image in projects.projects[projects].images) {
-				var formattedImage = HTMLprojectImage.replace("%data%",projects.projects[projects].images[image]);
-				$(".project-entry:last").append(formattedImage);
-			}
-		}
+		//if(project.projects[project_item].images.length>0) {
+			//for (image in project.projects[project_item].images) {
+				//var formattedImage = HTMLprojectImage.replace("%data%",project.projects[project_item].images[image]);
+				//$(".project-entry:last").append(formattedImage);
+			//}
+		//}
 	}
 };
 
-$("#mapDiv").append(googleMap);
+displayProjects();
 
-google.maps.event.addListener(marker, 'click', function() {
-  infowindow.open(map, marker);
-});
+//$("#mapDiv").append(googleMap);
+
+//google.maps.event.addListener(marker, 'click', function() {
+  //infowindow.open(map, marker);
+//});
 
 //function locationizer(work_obj) {
 //	var locationArray = [];
