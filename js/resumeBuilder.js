@@ -14,6 +14,7 @@ var bio = {
     "name": "Paula O",
     "role": "Digital Marketng Specialist",
     "contact": {
+        "location" : "Washington, DC",
         "email": "paola@gmail.com",
         "mobile": "(202) 000 0000",
         "twitter": "paola",
@@ -149,11 +150,12 @@ displayEducation();
 
 
 $("#mapDiv").append(googleMap);
+//
+//google.maps.event.addListener(marker, 'click', function() {
+//infowindow.open(map, marker);
+//});
 
-google.maps.event.addListener(marker, 'click', function() {
-infowindow.open(map, marker);
-});
-
+//addListener();
 
 
 
