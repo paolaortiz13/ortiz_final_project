@@ -41,12 +41,14 @@ var work = {
         "employer": "Clothing Store",
         "title": "Marketing Intern",
         "dates": "February - April 2015",
-        "description": "Conducted a research project on prices of men's clothing in Latin America"
+        "description": "Conducted a research project on prices of men's clothing in Latin America",
+        "location": "Sevilla, Spain"
     }, {
         "employer": "Non Profit",
         "title": "Digital Marketing Specialist",
         "dates": "February - April 2015",
-        "description": "Manage all digital marketing activities."
+        "description": "Manage all digital marketing activities.",
+        "location": "Washington, DC"
     }]
 };
 
@@ -90,6 +92,9 @@ function displayWork() {
 
         var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
         $(".work-entry:last").append(formattedDescription);
+
+        var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+        $(".work-entry:last").append(formattedLocation);
     }
 }
 
@@ -148,6 +153,7 @@ $("#mapDiv").append(googleMap);
 google.maps.event.addListener(marker, 'click', function() {
 infowindow.open(map, marker);
 });
+
 
 
 

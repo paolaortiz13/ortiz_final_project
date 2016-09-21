@@ -243,4 +243,4 @@ window.addEventListener('load', initializeMap);
 
 window.addEventListener('resize', function(e) {
   map.fitBounds(mapBounds);
-//};
+});
